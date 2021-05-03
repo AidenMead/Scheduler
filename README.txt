@@ -3,8 +3,7 @@ Purpose: A application that allows a streamlined approach to keeping track of ap
         The application utilizes a database for storing all applicable data, and JDBC for interfacing with the data.
 
 Author: Aiden Mead
-        amead6@wgu.edu
-        607-621-0991
+        **REDACTED PERSONAL INFORMATION**
 
 Version: 3.0.1
 Date: 3/4/2021
