@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ManageAppointmentsController">
+
+                     <children>
+                        <TableView fx:id="addApptTable" layoutX="64.0" layoutY="397.0" onMouseClicked="#editSelected" prefHeight="317.0" prefWidth="1080.0">
+                           <columns>
+                              <TableColumn id="addAppointmentID" fx:id="addAppointmentID" prefWidth="70.0" text="Appt. ID" />
+                              <TableColumn id="addTitle" fx:id="addTitle" minWidth="0.0" prefWidth="115.024169921875" text="Title" />
+                              <TableColumn id="addDescription" fx:id="addDescription" minWidth="3.0" prefWidth="121.0" text="Description" />
+                              <TableColumn id="addLocation" fx:id="addLocation" prefWidth="129.5" text="Location" />
+                              <TableColumn id="addContact" fx:id="addContact" prefWidth="144.5" text="Contact" />
+                              <TableColumn id="addType" fx:id="addType" prefWidth="136.5" text="Type" />
+                              <TableColumn id="addStart" fx:id="addStart" prefWidth="67.0" text="Start">
+               <columns>
+                  <TableColumn fx:id="startDate" minWidth="20.0" prefWidth="100.0" text="Date" />
+                  <TableColumn fx:id="startTime" prefWidth="75.0" text="Time" />
+               </columns>
+            </TableColumn>
+                              <TableColumn id="addEnd" fx:id="addEnd" prefWidth="68.0" text="End">
+               <columns>
+                  <TableColumn fx:id="endDate" prefWidth="100.0" text="Date" />
+                  <TableColumn fx:id="endTime" prefWidth="75.0" text="Time" />
+               </columns></TableColumn>
+                              <TableColumn id="addCustomerID" fx:id="addCustomerID" prefWidth="184.0" text="Customer">
+               <columns>
+                  <TableColumn fx:id="addCustId" prefWidth="40.0" text="ID" />
+                  <TableColumn fx:id="addCustName" prefWidth="110.0" text="Name" />
+               </columns></TableColumn>
+                           </columns>
+                        </TableView>
+                        <DatePicker fx:id="addStartDate" layoutX="630.0" layoutY="191.0" onAction="#setEdit" />
+                        <Label layoutX="135.0" layoutY="58.0" text="Appointment ID" />
+                        <TextField id="AppointmentIdInput" fx:id="addApptIDInput" disable="true" editable="false" layoutX="248.0" layoutY="53.0" prefHeight="27.0" prefWidth="106.0" promptText="Auto_Increment" />
+                        <Label layoutX="561.0" layoutY="72.0" text="Description" />
+                        <Label layoutX="135.0" layoutY="103.0" text="Appointment Title" />
+                        <TextField fx:id="addTitleInput" layoutX="248.0" layoutY="98.0" prefHeight="27.0" prefWidth="238.0" />
+                        <TextArea fx:id="addDescriptionInput" layoutX="631.0" layoutY="63.0" prefHeight="106.0" prefWidth="450.0" />
+                        <Label layoutX="135.0" layoutY="146.0" text="Location" />
+                        <TextField fx:id="addLocationInput" layoutX="206.0" layoutY="141.0" prefHeight="27.0" prefWidth="280.0" />
+                        <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="135.0" layoutY="196.0" text="Contact" />
+                        <Label contentDisplay="RIGHT" layoutX="135.0" layoutY="247.0" text="Type" />
+                        <Label layoutX="560.0" layoutY="196.0" text="Start Date" />
+                        <Label layoutX="850.0" layoutY="196.0" text="Start Time" />
+                        <Label layoutX="560.0" layoutY="246.0" text="End Date" />
+                        <Label layoutX="851.0" layoutY="246.0" text="End Time" />
+                        <Label layoutX="136.0" layoutY="296.0" text="Customer" />
+                        <ComboBox fx:id="addContactsDropdown" layoutX="206.0" layoutY="191.0" prefHeight="27.0" prefWidth="280.0" />
+                        <ComboBox fx:id="addTypeDropdown" layoutX="206.0" layoutY="242.0" prefHeight="27.0" prefWidth="280.0" />
+                        <ComboBox fx:id="addCustomerDropdown" layoutX="206.0" layoutY="291.0" prefHeight="27.0" prefWidth="280.0" />
+                        <DatePicker fx:id="addEndDate" layoutX="629.0" layoutY="241.0" />
+                        <Spinner fx:id="addStartTime" layoutX="916.0" layoutY="192.0" />
+                        <Spinner fx:id="addEndTime" layoutX="915.0" layoutY="241.0" />
+      <Button fx:id="backHomeBtn" layoutX="64.0" layoutY="734.0" mnemonicParsing="false" onAction="#backHome" text="Back" />
+      <Button fx:id="saveBtn" layoutX="1002.0" layoutY="735.0" mnemonicParsing="false" onAction="#saveAppointment" text="Save Appointment" textFill="#06681b">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font></Button>
+      <Button fx:id="clearSelectionBtn" layoutX="903.0" layoutY="361.0" mnemonicParsing="false" onAction="#clearSelection" text="Clear Selection to Add New Appointment" />
+      <Button fx:id="deleteApptBtn" layoutX="817.0" layoutY="735.0" mnemonicParsing="false" onAction="#deleteAppt" text="Delete Appointment" textFill="#5b0c0c">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font></Button>
+      <Label layoutX="561.0" layoutY="296.0" text="User" />
+      <ComboBox fx:id="userDropdown" layoutX="631.0" layoutY="291.0" prefWidth="150.0" />
+      <Label layoutX="65.0" layoutY="364.0" text="Select an appointment below to edit:" />
+      <Label fx:id="editingNotice" layoutX="227.0" layoutY="736.0" text="You are editing Appointment ID: ">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="editNoticeId" layoutX="585.0" layoutY="736.0" text="ID">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="addNotice" layoutX="227.0" layoutY="736.0" text="You are adding a new appointment.">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+                     </children>
+
+
+</AnchorPane>

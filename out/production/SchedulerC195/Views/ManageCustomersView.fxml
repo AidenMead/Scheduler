@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ManageCustomersController">
+   <children>
+      <TableView fx:id="customersTable" layoutX="64.0" layoutY="296.0" onMouseClicked="#editSelected" prefHeight="408.0" prefWidth="1059.0">
+        <columns>
+          <TableColumn fx:id="customerIdCol" prefWidth="75.0" text="Customer ID" />
+          <TableColumn fx:id="customerNameCol" prefWidth="170.0" text="Customer Name" />
+            <TableColumn fx:id="addressCol" minWidth="0.0" prefWidth="258.0" text="Address" />
+            <TableColumn fx:id="divisionCol" prefWidth="158.5" text="Division" />
+            <TableColumn fx:id="countryCol" prefWidth="114.0" text="Country" />
+            <TableColumn fx:id="postalCodeCol" minWidth="0.0" prefWidth="105.5" text="Postal Code" />
+            <TableColumn fx:id="phoneCol" prefWidth="177.0" text="Phone" />
+        </columns>
+      </TableView>
+      <Button fx:id="backBtn" layoutX="75.0" layoutY="735.0" mnemonicParsing="false" onAction="#backHome" text="Back" />
+      <Button fx:id="clearBtn" layoutX="901.0" layoutY="254.0" mnemonicParsing="false" onAction="#clearSelection" text="Clear Selection to add New Customer" />
+      <Button fx:id="saveBtn" layoutX="1013.0" layoutY="735.0" mnemonicParsing="false" onAction="#saveCustomer" text="Save Customer" textFill="#115e28">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Label layoutX="149.0" layoutY="75.0" text="Customer ID" />
+      <Label layoutX="147.0" layoutY="130.0" text="Customer Name" />
+      <Label layoutX="532.0" layoutY="76.0" text="Address" />
+      <Label layoutX="528.0" layoutY="188.0" text="Postal Code" />
+      <Label layoutX="148.0" layoutY="187.0" text="Phone" />
+      <TextField fx:id="customerIdInput" disable="true" editable="false" layoutX="266.0" layoutY="70.0" prefHeight="27.0" prefWidth="106.0" promptText="Auto_Increment" />
+      <TextField fx:id="customerNameInput" layoutX="266.0" layoutY="125.0" />
+      <TextField fx:id="phoneInput" layoutX="266.0" layoutY="183.0" />
+      <TextField fx:id="addressStreetInput" layoutX="619.0" layoutY="71.0" prefHeight="27.0" prefWidth="215.0" promptText="Street" />
+      <TextField fx:id="addressCityInput" layoutX="845.0" layoutY="71.0" prefHeight="27.0" prefWidth="150.0" promptText="City" />
+      <ComboBox fx:id="divisionDropdown" layoutX="619.0" layoutY="126.0" prefHeight="27.0" prefWidth="215.0" promptText="State/Territory" />
+      <TextField fx:id="postalCodeInput" layoutX="619.0" layoutY="184.0" prefWidth="75.0" />
+      <ComboBox fx:id="countryDropdown" layoutX="845.0" layoutY="126.0" onAction="#filterDivisions" prefWidth="150.0" promptText="Country" />
+      <Button fx:id="deleteCustBtn" layoutX="858.0" layoutY="735.0" mnemonicParsing="false" onAction="#deleteCust" text="Delete Customer" textFill="#6f0f0f">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Label fx:id="addCustNotice" layoutX="325.0" layoutY="719.0" text="You are adding a customer.">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="editCustNotice" layoutX="325.0" layoutY="719.0" text="You are editing customer ID:">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="editCustNoticeId" layoutX="624.0" layoutY="719.0" text="ID">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="65.0" layoutY="266.0" text="Select a customer below to edit:" />
+   </children>
+</AnchorPane>

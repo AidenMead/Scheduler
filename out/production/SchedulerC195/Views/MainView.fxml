@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MainViewController">
+   <children>
+      <TableView fx:id="apptTable" layoutX="62.0" layoutY="126.0" prefHeight="494.0" prefWidth="1073.0">
+        <columns>
+          <TableColumn id="AppointmentID" fx:id="AppointmentID" prefWidth="70.0" text="Appt. ID" />
+          <TableColumn id="Title" fx:id="Title" minWidth="0.0" prefWidth="115.024169921875" text="Title" />
+            <TableColumn id="Description" fx:id="Description" minWidth="3.0" prefWidth="217.82272338867188" text="Description" />
+            <TableColumn id="Location" fx:id="Location" prefWidth="175.23944091796875" text="Location" />
+            <TableColumn id="Contact" fx:id="Contact" prefWidth="137.055419921875" text="Contact" />
+            <TableColumn id="Type" fx:id="Type" prefWidth="99.4825439453125" text="Type" />
+            <TableColumn id="Start" fx:id="Start" prefWidth="76.64569091796875" text="Start">
+               <columns>
+                  <TableColumn fx:id="StartDate" prefWidth="100.0" text="Date" />
+                  <TableColumn fx:id="StartTime" prefWidth="75.0" text="Time" />
+               </columns></TableColumn>
+            <TableColumn id="End" fx:id="End" prefWidth="65.8402099609375" text="End">
+               <columns>
+                  <TableColumn fx:id="EndDate" prefWidth="100.0" text="Date" />
+                  <TableColumn fx:id="EndTime" prefWidth="75.0" text="Time" />
+               </columns></TableColumn>
+            <TableColumn id="CustomerID" fx:id="CustomerID" prefWidth="133.1597900390625" text="Customer ID" />
+        </columns>
+      </TableView>
+      <ButtonBar layoutX="802.0" layoutY="79.0" prefHeight="40.0" prefWidth="334.0">
+        <buttons>
+            <Button mnemonicParsing="false" onAction="#manageApptBtn" text="Manage Appointments" />
+            <Button mnemonicParsing="false" onAction="#manageCustBtn" text="Manage Customers" />
+        </buttons>
+         <padding>
+            <Insets right="20.0" />
+         </padding>
+      </ButtonBar>
+      <HBox layoutX="266.0" layoutY="91.0" prefHeight="18.0" prefWidth="334.0">
+         <children>
+            <RadioButton fx:id="viewAllBtn" mnemonicParsing="false" onAction="#setApptTable" text="View All">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </RadioButton>
+            <RadioButton fx:id="byWeekBtn" mnemonicParsing="false" onAction="#setTableToWeek" text="View By Week">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </RadioButton>
+            <RadioButton fx:id="byMonthBtn" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#setTableToMonth" text="View By Month">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </RadioButton>
+         </children>
+      </HBox>
+      <DatePicker fx:id="datePicker" layoutX="62.0" layoutY="86.0" onAction="#autoSortDates" />
+      <Label layoutX="62.0" layoutY="23.0" text="All times displayed in 24hr format" />
+      <Label layoutX="561.0" layoutY="669.0" text="Reports">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <ButtonBar layoutX="350.0" layoutY="714.0" prefHeight="40.0" prefWidth="500.0">
+        <buttons>
+          <Button mnemonicParsing="false" onAction="#typeMonthReport" text="Type and Month Report" />
+            <Button fx:id="reportsBtn" mnemonicParsing="false" onAction="#byContactReport" text="By Contact Report" />
+            <Button mnemonicParsing="false" onAction="#byCountryReport" text="By Country Report" />
+        </buttons>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets right="20.0" />
+         </padding>
+      </ButtonBar>
+      <Button fx:id="logOutBtn" layoutX="14.0" layoutY="754.0" mnemonicParsing="false" onAction="#handleLogOut" text="Log Out" />
+   </children>
+</AnchorPane>

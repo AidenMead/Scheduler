@@ -1,0 +1,15 @@
+Username entered: test | Password entered: test | Attempted On: 2021-03-03T14:57EST | Login Successful!
+Username entered: test | Password entered: test | Attempted On: 2021-03-04T16:01EST | Login Successful!
+Username entered: test | Password entered: tets | Attempted On: 2021-03-04T16:23EST | Login Failed!
+Username entered: test | Password entered: test | Attempted On: 2021-03-04T16:23EST | Login Successful!
+Username entered: test | Password entered: test | Attempted On: 2021-03-04T16:48EST | Login Successful!
+Username entered: test | Password entered: test | Attempted On: 2021-03-04T21:21EST | Login Successful!
+Username entered: test | Password entered: tets | Attempted On: 2021-03-04T21:22EST | Login Failed!
+Username entered: test | Password entered: test | Attempted On: 2021-03-04T21:22EST | Login Successful!
+Username entered: test | Password entered: test | Attempted On: 2021-03-04T21:23EST | Login Successful!
+Username entered: test | Password entered: test | Attempted On: 2021-03-04T21:25EST | Login Successful!
+Username entered: test | Password entered: test | Attempted On: 2021-03-04T21:32EST | Login Successful!
+Username entered: test | Password entered: test | Attempted On: 2021-03-04T21:34EST | Login Successful!
+Username entered: test | Password entered: test | Attempted On: 2021-03-04T21:40EST | Login Successful!
+Username entered: admin | Password entered: admin | Attempted On: 2021-04-25T13:21EST | Login Successful!
+Username entered: admin | Password entered: admin | Attempted On: 2021-04-25T13:32EST | Login Successful!
